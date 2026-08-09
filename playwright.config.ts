@@ -1,8 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
 import { getEnvironment } from './src/config/environment';
 
-const env = getEnvironment()
-
+const env = getEnvironment();
+if (!process.env.TEST_WORKER_INDEX) {
+  console.log(`[config] Running tests against "${env.envName}" (${env.baseUrl})`);
+}
 
 export default defineConfig({
   testDir: './tests',
