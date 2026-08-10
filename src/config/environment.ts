@@ -18,3 +18,11 @@ export function getEnvironment(): Environment {
   }
   return { envName, baseUrl: selectedEnv.baseUrl };
 }
+
+export function requireEnv(name: string): string {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
+  }
+  return value;
+}
