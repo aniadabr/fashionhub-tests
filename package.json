@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,8 @@
   "homepage": "https://github.com/aniadabr/fashionhub-tests#readme",
   "devDependencies": {
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.2.0",
+    "prettier": "^3.9.6"
   },
   "dependencies": {
     "dotenv": "^17.4.2"

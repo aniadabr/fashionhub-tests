@@ -1,10 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 import { getEnvironment } from './src/config/environment';
-import 'dotenv/config'
+import 'dotenv/config';
 
 const env = getEnvironment();
 if (!process.env.TEST_WORKER_INDEX) {
-  console.log(`[config] Running tests against "${env.envName}" (${env.baseUrl})`);
+  console.log(
+    `[config] Running tests against "${env.envName}" (${env.baseUrl})`,
+  );
 }
 
 export default defineConfig({
